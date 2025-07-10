@@ -1,167 +1,150 @@
 <!DOCTYPE HTML>
-<html lang = "en">
-    <head>
-        <title>La Casa de Carton</title>
-        <meta charset = "UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1">
-        <style>
-            * {
-              box-sizing: border-box;
-            }
-            
-            body {
-              font-family: Arial, Helvetica, sans-serif;
-              margin: 0;
-            }
-            
-            /* Style the header */
-            .header {
-              padding: 100%;
-              text-align: center;
-              background: #FB0303;
-              color: white;
-            }
+<html lang="en">
+<head>
+  <title>La Casa de Cartón</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-            img {
-              width: 100%;
-            }
-            
-            /* Increase the font size of the h1 element */
-            .header h1 {
-              font-size: 40px;
-            }
-            
-            /* Style the top navigation bar */
-            .navbar {
-              overflow: hidden;
-              background-color: #333;
-            }
-            
-            /* Style the navigation bar links */
-            .navbar a {
-              float: left;
-              display: block;
-              color: white;
-              text-align: center;
-              padding: 14px 20px;
-              text-decoration: none;
-            }
-            
-            /* Right-aligned link */
-            .navbar a.right {
-              float: right;
-            }
-            
-            /* Change color on hover */
-            .navbar a:hover {
-              background-color: #ddd;
-              color: black;
-            }
-            
-            /* Column container */
-            .row {  
-              display: flex;
-              flex-wrap: wrap;
-            }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #fffaf0;
+      color: #333;
+    }
 
-            /* Main column */
-            .main {   
-              flex: 70%;
-              background-color: white;
-              padding: 20px;
-            }
-            
-            /* Fake image, just for this example */
-            .fakeimg {
-              background-color: #aaa;
-              width: 100%;
-              padding: 20px;
-            }
-            
-            /* Footer */
-            .footer {
-              padding: 20px;
-              text-align: center;
-              background: #ddd;
-            }
+    .header {
+      text-align: center;
+      background: #ff6f61;
+      padding: 40px 20px;
+      color: white;
+    }
 
-            /* Style the top navigation bar */
-            .footer-navbar {
-              overflow: hidden;
-              background-color: #ddd;
-            }
+    .header img {
+      width: 150px;
+      border-radius: 10px;
+    }
 
-            /* Style the navigation bar links */
-            .footer-navbar b {
-              float: right;
-              display: block;
-              color: white;
-              text-align: center;
-              padding: 14px 20px;
-              text-decoration: none;
-            }
-            
-            /* Change color on hover */
-            .footer-navbar b:hover {
-              background-color: black;
-              color: #ddd;
-            }
-            
-            /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-            @media screen and (max-width: 700px) {
-              .row {   
-                flex-direction: column;
-              }
-            }
-            
-            /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each others */
-            @media screen and (max-width: 400px) {
-              .navbar a {
-                float: none;
-                width:100%;
-              }
-            }
-        </style>
-    </head>
+    .header h1 {
+      font-size: 48px;
+      margin: 20px 0 10px;
+      font-weight: bold;
+    }
 
-    <body>
-        <div class="header">
-            <img src="laCasaDeCarton.jpeg" alt="La Casa de Carton" width="100" height="100">
-        </div>
-  
-        <div class="navbar">
-            <a href="#">Products</a>
-            <a href="https://checkout.square.site/merchant/ML3K65BZGRAC2/checkout/MVNXRCSMK6CVOOBUHKNRFKIH" target="_self">Lessons</a>
-            <a href="#">About</a>
-            <a href="https://www.instagram.com/lacasadecarton23/" target="_blank">Socials</a>
-            <a href="#" class="right">Contact Us</a>
-        </div>
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #333;
+    }
 
-        <div class="row">
-            <div class="main">
-                <h2>TITLE HEADING</h2>
-                <h5>Title description, Dec 7, 2017</h5>
-                <div class="fakeimg" style="height:200px;">Image</div>
-                <p>Some text..</p>
-                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                <br>
-                <h2>TITLE HEADING</h2>
-                <h5>Title description, Sep 2, 2017</h5>
-                <div class="fakeimg" style="height:200px;">Image</div>
-                <p>Some text..</p>
-                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-            </div>
-          </div>
-          
-          <div class="footer">
-            <h2>Footer</h2>
-          </div>
-          <div class="footer-navbar">
-            <a href="#">About Us</a>
-            <a href="#">Privacy</a>
-            <a href="#">Socials</a>
-            <a href="#">Contact Us</a>
-          </div>
+    .navbar a {
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+    }
 
-    </body>
+    .navbar a:hover {
+      background-color: #ffcccb;
+      color: black;
+    }
+
+    .main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #ff6f61;
+    }
+
+    .section p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 20px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .header h1 {
+        font-size: 32px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+      }
+
+      .navbar a {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <img src="laCasaDeCarton.jpeg" alt="La Casa de Cartón logo" />
+    <h1>La Casa de Cartón</h1>
+    <p>Creaciones personalizadas para tus momentos especiales</p>
+  </div>
+
+  <div class="navbar">
+    <a href="#">Inicio</a>
+    <a href="#">Galería</a>
+    <a href="#">Servicios</a>
+    <a href="https://checkout.square.site/merchant/ML3K65BZGRAC2/checkout/MVNXRCSMK6CVOOBUHKNRFKIH" target="_blank">Clases</a>
+    <a href="https://www.instagram.com/lacasadecarton23/" target="_blank">Instagram</a>
+    <a href="#" class="right">Contáctanos</a>
+  </div>
+
+  <div class="main">
+
+    <div class="section">
+      <h2>Nuestras Creaciones</h2>
+      <img src="sample1.jpg" alt="Decoración de cartón" />
+      <p>Realizamos decoraciones únicas y hechas a mano con cartón para cumpleaños, baby showers, eventos escolares y más. Cada pieza es personalizada con amor y creatividad.</p>
+    </div>
+
+    <div class="section">
+      <h2>Sobre Nosotros</h2>
+      <p>La Casa de Cartón nació del amor por el arte y el deseo de transformar ideas en recuerdos inolvidables. Utilizamos materiales reciclables y nos dedicamos a crear productos con propósito y estilo.</p>
+    </div>
+
+    <div class="section">
+      <h2>Contáctanos</h2>
+      <p>¿Tienes una idea? ¡Hagámosla realidad! Puedes escribirnos en Instagram o enviarnos un correo a <strong>lacasadecarton23@gmail.com</strong>.</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    &copy; 2025 La Casa de Cartón | Hecho con 💖 en Texas
+  </div>
+
+</body>
 </html>
