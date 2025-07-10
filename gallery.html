@@ -91,6 +91,29 @@
     </div>
   </div>
 
+    <div id="developerPanel" style="display:none;" class="dev-upload">
+    <h3>Developer Upload Mode</h3>
+
+    <label for="themeSelect">Select a Theme:</label>
+    <select id="themeSelect">
+      <option value="valentines">Valentine’s Day</option>
+      <option value="graduation">Graduation</option>
+      <option value="misc">Misc</option>
+      <option value="signs">Signs</option>
+      <option value="backdrops">Backdrops</option>
+      <option value="mosaic">Mosaic Structures</option>
+      <option value="minis">Minis</option>
+      <option value="tablebases">Table Bases</option>
+    </select>
+
+    <br><br>
+    <input type="file" id="fileInput" accept="image/*,video/*" multiple />
+    <button onclick="handleUploads()">Upload</button>
+
+    <p style="font-size: 14px; color: #888;">Preview only – not saved permanently.</p>
+    <div id="uploadPreview"></div>
+  </div>
+  
   <!-- Gallery script -->
   <script>
     const images = [
@@ -253,27 +276,5 @@
     window.addEventListener('load', updateGallery);
   </script>
   
-  <div id="developerPanel" style="display:none;" class="dev-upload">
-    <h3>Developer Upload Mode</h3>
-
-    <label for="themeSelect">Select a Theme:</label>
-    <select id="themeSelect">
-      <option value="valentines">Valentine’s Day</option>
-      <option value="graduation">Graduation</option>
-      <option value="misc">Misc</option>
-      <option value="signs">Signs</option>
-      <option value="backdrops">Backdrops</option>
-      <option value="mosaic">Mosaic Structures</option>
-      <option value="minis">Minis</option>
-      <option value="tablebases">Table Bases</option>
-    </select>
-
-    <br><br>
-    <input type="file" id="fileInput" accept="image/*,video/*" multiple />
-    <button onclick="handleUploads()">Upload</button>
-
-    <p style="font-size: 14px; color: #888;">Preview only – not saved permanently.</p>
-    <div id="uploadPreview"></div>
-  </div>
 </body>
 </html>
