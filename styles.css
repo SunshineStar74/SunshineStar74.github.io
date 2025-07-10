@@ -247,3 +247,51 @@ body {
 .theme-selector label {
   margin-right: 10px;
 }
+
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: #ff6f61;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #e0544f;
+}
