@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | La Casa de Cartón</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+
+  <div class="header">
+    <img src="laCasaDeCarton.jpeg" alt="La Casa de Cartón logo" />
+    <h1>Gallery</h1>
+    <p>A look at our cardboard creations</p>
+  </div>
+
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#">Services</a>
+    <a href="https://checkout.square.site/merchant/ML3K65BZGRAC2/checkout/MVNXRCSMK6CVOOBUHKNRFKIH" target="_blank">Classes</a>
+    <a href="https://www.instagram.com/lacasadecarton23/" target="_blank">Instagram</a>
+    <a href="contact.html" class="right">Contact Us</a>
+  </div>
+
+  <div class="gallery-container">
+    <div class="main-image">
+      <button class="arrow left" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
+      <img id="mainDisplay" src="carton1.jpg" alt="Main Display" />
+      <button class="arrow right" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="image-description" id="imageDescription">
+      <strong>Valentine’s Day Box</strong> (2024)<br>Large Heart Design – Red, Pink & White
+    </div>
+    <div class="thumbnail-wrapper">
+      <div class="thumbnail-row" id="thumbnails">
+        <img src="carton1.jpg" alt="Valentine" onclick="setImage(0)" />
+        <img src="carton2.jpg" alt="Graduation Sign" onclick="setImage(1)" />
+        <img src="carton3.jpg" alt="Mini Display" onclick="setImage(2)" />
+        <img src="carton4.jpg" alt="Mosaic for Balloons" onclick="setImage(3)" />
+        <img src="carton5.jpg" alt="Table Base" onclick="setImage(4)" />
+        <!-- Add more below as needed -->
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <div style="margin: 10px 0; color: #555; font-size: 14px;">
+        &copy; 2025 La Casa de Cartón
+      </div>
+      <div style="margin: 10px 0;">
+        <a href="mailto:lacasadecarton23@gmail.com" target="_blank" style="margin-left: 15px; color: #555;">
+          <i class="fas fa-envelope fa-lg"></i>
+        </a>
+        <a href="https://www.instagram.com/lacasadecarton23/" target="_blank" style="margin-left: 15px; color: #555;">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+        <button onclick="openMessagePopup()" style="margin-left: 15px; background: none; border: none; color: #555; cursor: pointer;">
+          <i class="fas fa-comment-dots fa-lg"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message popup -->
+  <div id="messagePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.6); z-index:999;">
+    <div style="background:#fff; padding:20px; max-width:300px; margin:15% auto; border-radius:10px; text-align:center; position:relative;">
+      <h3>Message Us</h3>
+      <p>Choose your preferred method:</p>
+      <a href="https://wa.me/1XXXXXXXXXX" target="_blank" style="display:block; margin:10px 0; color:white; background:#25D366; padding:10px; border-radius:5px; text-decoration:none;">WhatsApp</a>
+      <a href="sms:+1XXXXXXXXXX" style="display:block; margin:10px 0; color:white; background:#007AFF; padding:10px; border-radius:5px; text-decoration:none;">Text Message</a>
+      <button onclick="closeMessagePopup()" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:18px; cursor:pointer;">&times;</button>
+    </div>
+  </div>
+
+  <!-- Gallery script -->
+  <script>
+    const images = [
+      "carton1.jpg",
+      "carton2.jpg",
+      "carton3.jpg",
+      "carton4.jpg",
+      "carton5.jpg"
+    ];
+
+    const descriptions = [
+      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White" },
+      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors – 3D Letters" },
+      { name: "Mini Display", year: 2024, size: "Small Base", medium: "For Shelves or Gifts" },
+      { name: "Balloon Mosaic", year: 2024, size: "5ft tall", medium: "Number 3 Mosaic for Balloon Arch" },
+      { name: "Table Base", year: 2024, size: "Custom Width", medium: "Decorated Base for Candy Table" }
+    ];
+
+    let current = 0;
+    const mainDisplay = document.getElementById("mainDisplay");
+    const thumbnailRow = document.getElementById("thumbnails");
+    const thumbnails = thumbnailRow.getElementsByTagName("img");
+    const descriptionBox = document.getElementById("imageDescription");
+
+    function updateGallery() {
+      mainDisplay.src = images[current];
+      for (let i = 0; i < thumbnails.length; i++) {
+        thumbnails[i].classList.remove("active");
+      }
+      thumbnails[current].classList.add("active");
+
+      const thumbnailWidth = thumbnails[0].offsetWidth + 16;
+      const containerCenter = thumbnailRow.parentElement.offsetWidth / 2;
+      const scrollTo = (thumbnailWidth * current + thumbnailWidth / 2) - containerCenter;
+      thumbnailRow.parentElement.scrollTo({ left: scrollTo, behavior: 'smooth' });
+
+      const desc = descriptions[current];
+      descriptionBox.innerHTML = `<strong>${desc.name}</strong> (${desc.year})<br>${desc.size} – ${desc.medium}`;
+    }
+
+    function setImage(index) {
+      current = index;
+      updateGallery();
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      updateGallery();
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      updateGallery();
+    }
+
+    function openMessagePopup() {
+      document.getElementById("messagePopup").style.display = "block";
+    }
+
+    function closeMessagePopup() {
+      document.getElementById("messagePopup").style.display = "none";
+    }
+
+    window.addEventListener('load', updateGallery);
+  </script>
+</body>
+</html>
