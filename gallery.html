@@ -25,6 +25,21 @@
     <a href="contact.html" class="right">Contact Us</a>
   </div>
 
+  <div class="theme-selector" style="text-align:center; margin: 30px 0;">
+    <label for="themeDropdown" style="font-weight: bold; font-size: 18px;">Select a Theme:</label>
+    <select id="themeDropdown" onchange="filterByTheme()" style="padding: 10px; font-size: 16px;">
+      <option value="all">All</option>
+      <option value="valentines">Valentine’s Day</option>
+      <option value="graduation">Graduation</option>
+      <option value="misc">Misc</option>
+      <option value="signs">Signs</option>
+      <option value="backdrops">Backdrops</option>
+      <option value="mosaic">Mosaic Structures</option>
+      <option value="minis">Minis</option>
+      <option value="tablebases">Table Bases</option>
+    </select>
+  </div>
+
   <div class="gallery-container">
     <div class="main-image">
       <button class="arrow left" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
@@ -85,15 +100,15 @@
       "carton4.jpg",
       "carton5.jpg"
     ];
-
+    
     const descriptions = [
-      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White" },
-      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors – 3D Letters" },
-      { name: "Mini Display", year: 2024, size: "Small Base", medium: "For Shelves or Gifts" },
-      { name: "Balloon Mosaic", year: 2024, size: "5ft tall", medium: "Number 3 Mosaic for Balloon Arch" },
-      { name: "Table Base", year: 2024, size: "Custom Width", medium: "Decorated Base for Candy Table" }
+      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White", theme: "valentines" },
+      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors", theme: "graduation" },
+      { name: "Mini Display", year: 2024, size: "Small Base", medium: "Shelf-sized decor", theme: "minis" },
+      { name: "Balloon Mosaic", year: 2024, size: "5ft", medium: "Mosaic Frame", theme: "mosaic" },
+      { name: "Table Base", year: 2024, size: "Custom", medium: "Candy Display Table", theme: "tablebases" }
     ];
-
+    
     let current = 0;
     const mainDisplay = document.getElementById("mainDisplay");
     const thumbnailRow = document.getElementById("thumbnails");
@@ -137,6 +152,37 @@
 
     function closeMessagePopup() {
       document.getElementById("messagePopup").style.display = "none";
+    }
+
+    function filterByTheme() {
+      const selectedTheme = document.getElementById("themeDropdown").value;
+      const thumbnailRow = document.getElementById("thumbnails");
+      
+      // Clear thumbnails
+      thumbnailRow.innerHTML = "";
+
+      // Re-add thumbnails that match the theme
+      descriptions.forEach((desc, index) => {
+        if (selectedTheme === "all" || desc.theme === selectedTheme) {
+          const img = document.createElement("img");
+          img.src = images[index];
+          img.alt = desc.name;
+          img.onclick = () => setImage(index);
+          thumbnailRow.appendChild(img);
+        }
+      });
+
+      // Reset main image to first visible item
+      const visibleIndexes = descriptions
+        .map((desc, i) => (selectedTheme === "all" || desc.theme === selectedTheme) ? i : null)
+        .filter(i => i !== null);
+
+      if (visibleIndexes.length > 0) {
+        setImage(visibleIndexes[0]);
+      } else {
+        document.getElementById("mainDisplay").src = "";
+        document.getElementById("imageDescription").innerHTML = "No images available.";
+      }
     }
 
     window.addEventListener('load', updateGallery);
