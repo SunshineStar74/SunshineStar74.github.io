@@ -185,7 +185,95 @@
       }
     }
 
+    let devKeyState = {
+      ctrl: false,
+      shiftRight: false,
+      backtick: false
+    };
+    
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "ControlLeft" || e.code === "ControlRight") devKeyState.ctrl = true;
+      if (e.code === "ShiftRight") devKeyState.shiftRight = true;
+      if (e.code === "Backquote") devKeyState.backtick = true;
+    
+      if (devKeyState.ctrl && devKeyState.shiftRight && devKeyState.backtick) {
+        toggleDeveloperMode();
+      }
+    });
+
+    document.addEventListener("keyup", (e) => {
+      if (e.code === "ControlLeft" || e.code === "ControlRight") devKeyState.ctrl = false;
+      if (e.code === "ShiftRight") devKeyState.shiftRight = false;
+      if (e.code === "Backquote") devKeyState.backtick = false;
+    });
+    
+    function toggleDeveloperMode() {
+      const panel = document.getElementById("developerPanel");
+      panel.style.display = panel.style.display === "none" ? "block" : "none";
+    }
+    
+    function handleUploads() {
+      const input = document.getElementById("fileInput");
+      const preview = document.getElementById("uploadPreview");
+      const selectedTheme = document.getElementById("themeSelect").value;
+
+      preview.innerHTML = "";
+
+      [...input.files].forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          let mediaElement;
+          if (file.type.startsWith("image/")) {
+            mediaElement = document.createElement("img");
+          } else if (file.type.startsWith("video/")) {
+            mediaElement = document.createElement("video");
+            mediaElement.controls = true;
+          }
+
+          if (mediaElement) {
+            mediaElement.src = e.target.result;
+            mediaElement.style.maxWidth = "150px";
+            mediaElement.style.margin = "10px";
+            mediaElement.style.borderRadius = "10px";
+
+            // Wrap in a container with theme label
+            const wrapper = document.createElement("div");
+            wrapper.style.textAlign = "center";
+            wrapper.style.margin = "10px";
+            wrapper.innerHTML = `<small style="display:block;margin-bottom:6px;color:#555;"><em>${selectedTheme}</em></small>`;
+            wrapper.appendChild(mediaElement);
+    
+            preview.appendChild(wrapper);
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
     window.addEventListener('load', updateGallery);
   </script>
+  
+  <div id="developerPanel" style="display:none;" class="dev-upload">
+    <h3>Developer Upload Mode</h3>
+
+    <label for="themeSelect">Select a Theme:</label>
+    <select id="themeSelect">
+      <option value="valentines">Valentine’s Day</option>
+      <option value="graduation">Graduation</option>
+      <option value="misc">Misc</option>
+      <option value="signs">Signs</option>
+      <option value="backdrops">Backdrops</option>
+      <option value="mosaic">Mosaic Structures</option>
+      <option value="minis">Minis</option>
+      <option value="tablebases">Table Bases</option>
+    </select>
+
+    <br><br>
+    <input type="file" id="fileInput" accept="image/*,video/*" multiple />
+    <button onclick="handleUploads()">Upload</button>
+
+    <p style="font-size: 14px; color: #888;">Preview only – not saved permanently.</p>
+    <div id="uploadPreview"></div>
+  </div>
 </body>
 </html>
