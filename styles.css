@@ -1,119 +1,97 @@
-*{
+* {
   box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-sarif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
+  background-color: #fffaf0;
+  color: #333;
 }
 
 .header {
-    padding: 80px; /* some padding */
-    text-align: center; /* center the text */
-    background: #FB0303; /* green background */
-    color: white; /* white text color */
+  text-align: center;
+  background: #ff6f61;
+  padding: 40px 20px;
+  color: white;
 }
-  
-/* Increase the font size of the <h1> element */
+
+.header img {
+  width: 150px;
+  border-radius: 10px;
+}
+
 .header h1 {
-  font-size: 40px;
+  font-size: 48px;
+  margin: 20px 0 10px;
+  font-weight: bold;
 }
 
-/* Style the top navigation bar */
 .navbar {
-  overflow: hidden; /* Hide overflow */
-  background-color: #333; /* Dark background color */
-}
-  
-/* Style the navigation bar links */
-.navbar a {
-  float: left; /* Make sure that the links stay side-by-side */
-  display: block; /* Change the display to block, for responsive reasons (see below) */
-  color: white; /* White text color */
-  text-align: center; /* Center the text */
-  padding: 14px 20px; /* Add some padding */
-  text-decoration: none; /* Remove underline */
-}
-  
-/* Right-aligned link */
-.navbar a.right {
-  float: right; /* Float a link to the right */
-}
-  
-/* Change color on hover/mouse-over */
-.navbar a:hover {
-  background-color: #ddd; /* Grey background color */
-  color: black; /* Black text color */
-}
-
-/* Column container */
-.row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  background-color: #333;
 }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  flex: 30%; /* Set the width of the sidebar */
-  background-color: #f1f1f1; /* Grey background color */
-  padding: 20px; /* Some padding */
+.navbar a {
+  padding: 14px 20px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
 }
 
-/* Main column */
+.navbar a:hover {
+  background-color: #ffcccb;
+  color: black;
+}
+
 .main {
-  flex: 70%; /* Set the width of the main content */
-  background-color: white; /* White background color */
-  padding: 20px; /* Some padding */
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-/* Fake image, juust for exampl */
-.fakeimg{
-  background-color: #aaa;
+.section {
+  margin-bottom: 40px;
+}
+
+.section img {
   width: 100%;
-  padding: 20px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #ff6f61;
+}
+
+.section p {
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .footer {
-  padding: 20px; /* Some padding */
-  text-align: center; /* Center text*/
-  background: #ddd; /* Grey background */
-}
-
-/* Style the top navigation bar */
-.footer-navbar {
-  overflow: hidden;
-  background-color: #ddd;
-}
-
-/* Style the navigation bar links */
-.footer-navbar b {
-  float: right;
-  display: block;
-  color: white;
+  background-color: #f4f4f4;
   text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
+  padding: 20px;
+  color: #555;
+  font-size: 14px;
 }
 
-/* Change color on hover */
-.footer-navbar b:hover {
-  background-color: black;
-  color: #ddd;
-}
-
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {
-    flex-direction: column;
+@media screen and (max-width: 600px) {
+  .header h1 {
+    font-size: 32px;
   }
-}
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
+  .section h2 {
+    font-size: 24px;
+  }
+
   .navbar a {
-    float: none;
-    width: 100%;
+    flex: 1 1 100%;
   }
 }
