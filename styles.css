@@ -236,3 +236,14 @@ body {
 .footer a:hover {
   color: #ff6f61;
 }
+
+.theme-selector select {
+  border: 2px solid #ff6f61;
+  border-radius: 8px;
+  background-color: #fffaf0;
+  color: #333;
+}
+
+.theme-selector label {
+  margin-right: 10px;
+}
