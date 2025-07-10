@@ -95,3 +95,15 @@ body {
     flex: 1 1 100%;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .footer div {
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .footer div > div {
+    margin: 5px 0;
+  }
+}
