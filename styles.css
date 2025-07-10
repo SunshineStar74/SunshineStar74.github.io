@@ -295,3 +295,35 @@ body {
 .contact-form button:hover {
   background-color: #e0544f;
 }
+
+.dev-upload {
+  background-color: #fff0f0;
+  border: 2px dashed #ff6f61;
+  padding: 20px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dev-upload h3 {
+  margin-top: 0;
+  color: #d44;
+  text-align: center;
+}
+
+#uploadPreview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dev-upload select {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 8px;
+  border: 2px solid #ff6f61;
+  border-radius: 6px;
+}
