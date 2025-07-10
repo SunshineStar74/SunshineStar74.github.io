@@ -31,8 +31,23 @@
       <ul style="font-size: 18px; line-height: 2;">
         <li><strong>Email:</strong> <a href="mailto:lacasadecarton23@gmail.com">lacasadecarton23@gmail.com</a></li>
         <li><strong>Instagram:</strong> <a href="https://www.instagram.com/lacasadecarton23/" target="_blank">@lacasadecarton23</a></li>
-        <li><strong>WhatsApp:</strong> <a href="https://wa.me/12816908934" target="_blank">Click here to message us</a> <!-- Replace with your real number --> </li>
       </ul>
+
+      <section class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          
+          <button type="submit">Send</button>
+        </form>
+      </section>
 
       <p>If you'd like, let us know your theme, colors, and event date — and we’ll get back to you with a quote!</p>
     </div>
@@ -85,6 +100,12 @@
   function closeMessagePopup() {
     document.getElementById("messagePopup").style.display = "none";
   }
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Thank you for your message! We'll get back to you soon.");
+    this.reset();
+  });
 </script>
 
 </body>
