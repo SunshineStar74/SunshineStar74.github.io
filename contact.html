@@ -54,11 +54,26 @@
       <a href="https://www.instagram.com/lacasadecarton23/" target="_blank" style="margin-left: 15px; color: #555;">
         <i class="fab fa-instagram fa-lg"></i>
       </a>
-      <a href="https://wa.me/12816908934" target="_blank" style="margin-left: 15px; color: #555;">
-        <i class="fab fa-whatsapp fa-lg"></i>
-      </a>
+      <!-- WhatsApp/SMS Popup Trigger Button -->
+      <button onclick="openMessagePopup()" style="margin-left: 15px; background: none; border: none; color: #555; cursor: pointer;">
+        <i class="fas fa-comment-dots fa-lg"></i>
+      </button>
+      
+      <!-- Popup Modal -->
+      <div id="messagePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.6); z-index:999;">
+        <div style="background:#fff; padding:20px; max-width:300px; margin:15% auto; border-radius:10px; text-align:center; position:relative;">
+          <h3>Message Us</h3>
+          <p>Choose your preferred method:</p>
+          <a href="https://wa.me/12816908934" target="_blank" style="display:block; margin:10px 0; color:white; background:#25D366; padding:10px; border-radius:5px; text-decoration:none;">
+            WhatsApp
+          </a>
+          <a href="sms:+12816908934" style="display:block; margin:10px 0; color:white; background:#007AFF; padding:10px; border-radius:5px; text-decoration:none;">
+            Text Message
+          </a>
+          <button onclick="closeMessagePopup()" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:18px; cursor:pointer;">&times;</button>
+        </div>
+      </div>
     </div>
-
   </div>
 </div>
 
