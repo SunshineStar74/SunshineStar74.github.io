@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!--<!DOCTYPE HTML>
 <html lang="en">
 <head>
   <title>La Casa de Cartón</title>
@@ -41,12 +41,12 @@
   <div class="footer">
   <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
 
-    <!-- Left: Copyright -->
+    <!-- Left: Copyright --
     <div style="margin: 10px 0; color: #555; font-size: 14px;">
       &copy; 2025 La Casa de Cartón
     </div>
 
-    <!-- Right: Social Icons -->
+    <!-- Right: Social Icons --
     <div style="margin: 10px 0;">
       <a href="mailto:lacasadecarton23@gmail.com" target="_blank" style="margin-left: 15px; color: #555;">
         <i class="fas fa-envelope fa-lg"></i>
@@ -54,12 +54,12 @@
       <a href="https://www.instagram.com/lacasadecarton23/" target="_blank" style="margin-left: 15px; color: #555;">
         <i class="fab fa-instagram fa-lg"></i>
       </a>
-      <!-- WhatsApp/SMS Popup Trigger Button -->
+      <!-- WhatsApp/SMS Popup Trigger Button --
       <button onclick="openMessagePopup()" style="margin-left: 15px; background: none; border: none; color: #555; cursor: pointer;">
         <i class="fas fa-comment-dots fa-lg"></i>
       </button>
       
-      <!-- Popup Modal -->
+      <!-- Popup Modal --
       <div id="messagePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.6); z-index:999;">
         <div style="background:#fff; padding:20px; max-width:300px; margin:15% auto; border-radius:10px; text-align:center; position:relative;">
           <h3>Message Us</h3>
@@ -82,6 +82,108 @@
     document.getElementById("messagePopup").style.display = "block";
   }
 
+  function closeMessagePopup() {
+    document.getElementById("messagePopup").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
+-->
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>La Casa de Cartón</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar sticky">
+    <div class="nav-container">
+      <a href="index.html" class="logo">La Casa de Cartón</a>
+      <div class="nav-links">
+        <a href="gallery.html">Gallery</a>
+        <a href="#services">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Custom Cardboard Creations</h1>
+      <p>Beautiful, handmade decorations for unforgettable events.</p>
+      <a href="gallery.html" class="btn-primary">Explore Our Work</a>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="section" id="services">
+    <div class="main">
+      <h2>What We Do</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <img src="sample1.jpg" alt="Balloon Base" />
+          <h3>Balloon Bases</h3>
+          <p>Sturdy, creative bases for balloon arches and sculptures.</p>
+        </div>
+        <div class="service-card">
+          <img src="sample2.jpg" alt="Signs" />
+          <h3>Event Signs</h3>
+          <p>Custom signs for birthdays, graduations, and more.</p>
+        </div>
+        <div class="service-card">
+          <img src="sample3.jpg" alt="Photo Backdrops" />
+          <h3>Photo Backdrops</h3>
+          <p>Make every photo special with our unique cardboard designs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section">
+    <div class="main">
+      <h2>About Us</h2>
+      <p>La Casa de Cartón was born from a love of art and the desire to turn ideas into unforgettable memories. We use recyclable materials and are committed to making beautiful, meaningful products.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="social-icons">
+        <a href="mailto:lacasadecarton23@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/lacasadecarton23/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <button onclick="openMessagePopup()" aria-label="Message Options"><i class="fas fa-comment-dots"></i></button>
+      </div>
+      <div class="copyright">
+        &copy; 2025 La Casa de Cartón
+      </div>
+    </div>
+  </footer>
+
+  <!-- Popup Modal -->
+  <div id="messagePopup" class="modal">
+    <div class="modal-content">
+      <button class="close" onclick="closeMessagePopup()">&times;</button>
+      <h3>Message Us</h3>
+      <p>Choose your preferred method:</p>
+      <a href="https://wa.me/12816908934" target="_blank" class="popup-btn whatsapp">WhatsApp</a>
+      <a href="sms:+12816908934" class="popup-btn sms">Text Message</a>
+    </div>
+  </div>
+
+<script>
+  function openMessagePopup() {
+    document.getElementById("messagePopup").style.display = "block";
+  }
   function closeMessagePopup() {
     document.getElementById("messagePopup").style.display = "none";
   }
