@@ -12,33 +12,39 @@
 </head>
 <body>
 
-  <div class="header">
+  <!--<div class="header">
     <img src="laCasaDeCartonLogo.jpeg" alt="La Casa de Cartón logo" />
     <h1>Gallery</h1>
     <p>A look at our cardboard creations</p>
-  </div>
+  </div>-->
 
   <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="#">Services</a>
-    <a href="contact.html" class="right">Contact Us</a>
+    <div class="nav-container">
+      <a href="index.html" class="logo">La Casa de Cartón</a>
+      <div class="nav-links">
+        <a href="gallery.html">Gallery</a>
+        <a href="#">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
   </div>
 
-  <div class="theme-selector" style="text-align:center; margin: 30px 0;">
-    <label for="themeDropdown" style="font-weight: bold; font-size: 18px;">Select a Theme:</label>
-    <select id="themeDropdown" onchange="filterByTheme()" style="padding: 10px; font-size: 16px;">
-      <option value="all">All</option>
-      <option value="valentines">Valentine’s Day</option>
-      <option value="graduation">Graduation</option>
-      <option value="misc">Misc</option>
-      <option value="signs">Signs</option>
-      <option value="backdrops">Backdrops</option>
-      <option value="mosaic">Mosaic Structures</option>
-      <option value="minis">Minis</option>
-      <option value="tablebases">Table Bases</option>
-    </select>
-  </div>
+<section class="section">
+  <div class="main">
+    <div class="theme-selector" style="margin-bottom: 40px;">
+      <label for="themeDropdown">Select a Theme:</label>
+      <select id="themeDropdown" onchange="filterByTheme()">
+        <option value="all">All</option>
+        <option value="valentines">Valentine’s Day</option>
+        <option value="graduation">Graduation</option>
+        <option value="misc">Misc</option>
+        <option value="signs">Signs</option>
+        <option value="backdrops">Backdrops</option>
+        <option value="mosaic">Mosaic Structures</option>
+        <option value="minis">Minis</option>
+        <option value="tablebases">Table Bases</option>
+      </select>
+    </div>
 
   <div class="gallery-container">
     <div class="main-image">
@@ -60,25 +66,17 @@
       </div>
     </div>
   </div>
-
-  <div class="footer">
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-      <div style="margin: 10px 0; color: #555; font-size: 14px;">
-        &copy; 2025 La Casa de Cartón
-      </div>
-      <div style="margin: 10px 0;">
-        <a href="mailto:lacasadecarton23@gmail.com" target="_blank" style="margin-left: 15px; color: #555;">
-          <i class="fas fa-envelope fa-lg"></i>
-        </a>
-        <a href="https://www.instagram.com/lacasadecarton23/" target="_blank" style="margin-left: 15px; color: #555;">
-          <i class="fab fa-instagram fa-lg"></i>
-        </a>
-        <button onclick="openMessagePopup()" style="margin-left: 15px; background: none; border: none; color: #555; cursor: pointer;">
-          <i class="fas fa-comment-dots fa-lg"></i>
-        </button>
+    
+  <footer class="footer">
+    <div class="footer-content">
+      <div>&copy; 2025 La Casa de Cartón</div>
+      <div class="social-icons">
+        <a href="mailto:lacasadecarton23@gmail.com" target="_blank"><i class="fas fa-envelope fa-lg"></i></a>
+        <a href="https://www.instagram.com/lacasadecarton23/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+        <button onclick="openMessagePopup()"><i class="fas fa-comment-dots fa-lg"></i></button>
       </div>
     </div>
-  </div>
+  </footer>
 
   <!-- Message popup -->
   <div id="messagePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.6); z-index:999;">
