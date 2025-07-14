@@ -150,9 +150,8 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   padding: 0 2rem;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
 .social-icons a, .social-icons button {
