@@ -24,7 +24,7 @@
   </div>
 
 <section class="section">
-  <div class="main">
+  <main class="main">
     <div class="theme-selector" style="margin-bottom: 40px;">
       <label for="themeDropdown">Select a Theme:</label>
       <select id="themeDropdown" onchange="filterByTheme()">
@@ -112,7 +112,7 @@
     <p style="font-size: 14px; color: #888;">Preview only – not saved permanently.</p>
     <div id="uploadPreview"></div>
     </div>
-  </div>
+  </main>
 </section>
 
   <!-- Footer -->
@@ -127,247 +127,121 @@
       </div>
     </div>
   </footer>
+  
 
   
   <!-- Gallery script -->
   <script>
-    const images = [
-      "assets/images/valentines/big-love.jpg",
-      "assets/images/valentines/box-of-chocolates.jpg",
-      "assets/images/valentines/boy-or-girl-heart.jpg",
-      "assets/images/valentines/combi.jpg",
-      "assets/images/valentines/heart-arch.jpg",
-      "assets/images/valentines/hollow-heart.jpg",
-      "assets/images/valentines/huge-box-of-chocolates.jpg",
-      "assets/images/valentines/i-love-you-brown.jpg",
-      "assets/images/valentines/i-love-you-white.jpg",
-      "assets/images/valentines/kisses-booth.jpg",
-      "assets/images/valentines/love.jpg",
-      "assets/images/valentines/love-big-heart.jpg",
-      "assets/images/valentines/love-brown.jpg",
-      "assets/images/valentines/love-small-hearts.jpg",
-      "assets/images/valentines/napkin heart.jpg",
-      "assets/images/valentines/red-truck.jpg",
-      "assets/images/valentines/small-love-box.jpg",
-      "assets/images/valentines/teddy-bears.jpg",
-      "assets/images/valentines/tiny-love-box.jpg",
-      "assets/images/valentines/white-love.jpg",
-      "assets/images/valentines/wonky-love.jpg",
-      "assets/images/valentines/xoxo.jpg",
-      "carton3.jpg",
-      "carton4.jpg",
-      "carton5.jpg",
-      "carton1.jpg",
-      "carton2.jpg",
-      "carton3.jpg",
-      "carton4.jpg",
-      "carton5.jpg",
-      "carton1.jpg",
-      "carton2.jpg",
-      "carton3.jpg",
-      "carton4.jpg",
-      "carton5.jpg",
-      "carton1.jpg",
-      "carton2.jpg",
-      "carton3.jpg",
-      "carton4.jpg",
-      "carton5.jpg",
-      "carton1.jpg",
-      "carton2.jpg",
-      "carton3.jpg",
-      "carton4.jpg",
-      "carton5.jpg",
-      "carton1.jpg",
-      "carton2.jpg",
-      "carton3.jpg",
-      "carton4.jpg",
-      "carton5.jpg"
-    ];
-    
-    const descriptions = [
-      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White", theme: "valentines" },
-      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors", theme: "graduation" },
-      { name: "Mini Display", year: 2024, size: "Small Base", medium: "Shelf-sized decor", theme: "minis" },
-      { name: "Balloon Mosaic", year: 2024, size: "5ft", medium: "Mosaic Frame", theme: "mosaic" },
-      { name: "Table Base", year: 2024, size: "Custom", medium: "Candy Display Table", theme: "tablebases" },
-      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White", theme: "valentines" },
-      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors", theme: "graduation" },
-      { name: "Mini Display", year: 2024, size: "Small Base", medium: "Shelf-sized decor", theme: "minis" },
-      { name: "Balloon Mosaic", year: 2024, size: "5ft", medium: "Mosaic Frame", theme: "mosaic" },
-      { name: "Table Base", year: 2024, size: "Custom", medium: "Candy Display Table", theme: "tablebases" },
-      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White", theme: "valentines" },
-      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors", theme: "graduation" },
-      { name: "Mini Display", year: 2024, size: "Small Base", medium: "Shelf-sized decor", theme: "minis" },
-      { name: "Balloon Mosaic", year: 2024, size: "5ft", medium: "Mosaic Frame", theme: "mosaic" },
-      { name: "Table Base", year: 2024, size: "Custom", medium: "Candy Display Table", theme: "tablebases" },
-      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White", theme: "valentines" },
-      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors", theme: "graduation" },
-      { name: "Mini Display", year: 2024, size: "Small Base", medium: "Shelf-sized decor", theme: "minis" },
-      { name: "Balloon Mosaic", year: 2024, size: "5ft", medium: "Mosaic Frame", theme: "mosaic" },
-      { name: "Table Base", year: 2024, size: "Custom", medium: "Candy Display Table", theme: "tablebases" },
-      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White", theme: "valentines" },
-      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors", theme: "graduation" },
-      { name: "Mini Display", year: 2024, size: "Small Base", medium: "Shelf-sized decor", theme: "minis" },
-      { name: "Balloon Mosaic", year: 2024, size: "5ft", medium: "Mosaic Frame", theme: "mosaic" },
-      { name: "Table Base", year: 2024, size: "Custom", medium: "Candy Display Table", theme: "tablebases" },
-      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White", theme: "valentines" },
-      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors", theme: "graduation" },
-      { name: "Mini Display", year: 2024, size: "Small Base", medium: "Shelf-sized decor", theme: "minis" },
-      { name: "Balloon Mosaic", year: 2024, size: "5ft", medium: "Mosaic Frame", theme: "mosaic" },
-      { name: "Table Base", year: 2024, size: "Custom", medium: "Candy Display Table", theme: "tablebases" },
-      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White", theme: "valentines" },
-      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors", theme: "graduation" },
-      { name: "Mini Display", year: 2024, size: "Small Base", medium: "Shelf-sized decor", theme: "minis" },
-      { name: "Balloon Mosaic", year: 2024, size: "5ft", medium: "Mosaic Frame", theme: "mosaic" },
-      { name: "Table Base", year: 2024, size: "Custom", medium: "Candy Display Table", theme: "tablebases" },
-      { name: "Valentine’s Day Box", year: 2024, size: "Large Heart Design", medium: "Red, Pink & White", theme: "valentines" },
-      { name: "Graduation Sign", year: 2024, size: "24x36", medium: "School Colors", theme: "graduation" },
-      { name: "Mini Display", year: 2024, size: "Small Base", medium: "Shelf-sized decor", theme: "minis" },
-      { name: "Balloon Mosaic", year: 2024, size: "5ft", medium: "Mosaic Frame", theme: "mosaic" },
-      { name: "Table Base", year: 2024, size: "Custom", medium: "Candy Display Table", theme: "tablebases" }
-    ];
-    
+    let allImages = [];
     let current = 0;
-    const mainDisplay = document.getElementById("mainDisplay");
-    const thumbnailRow = document.getElementById("thumbnails");
-    const thumbnails = thumbnailRow.getElementsByTagName("img");
-    const descriptionBox = document.getElementById("imageDescription");
 
-    function updateGallery() {
-      mainDisplay.src = images[current];
+    async function loadGalleryData() {
+      const res = await fetch("assets/data/gallery.json");
+      const data = await res.json();
+      allImages = data;
+      renderThumbnails("all");
+      setImage(0);
+    }
+
+    function renderThumbnails(theme) {
+      const container = document.getElementById("thumbnails");
+      container.innerHTML = "";
+
+      const filtered = theme === "all"
+        ? Array.from(new Map(allImages.map(item => [item.src, item])).values())
+        : allImages.filter(img => img.themes.includes(theme));
+
+      filtered.forEach((img, index) => {
+        const thumb = document.createElement("img");
+        thumb.loading = "lazy";
+        thumb.src = img.src;
+        thumb.alt = img.name;
+        
+        // Set image on click
+        thumb.onclick = () => setImageFromFiltered(index, theme);
+        
+        // Fallback if image fails to load
+        thumb.onerror = () => {
+          thumb.src = 'assets/images/fallback.jpg';
+        };
+        
+        // Preload full-size image on hover
+        thumb.onmouseenter = () => {
+          const preload = new Image();
+          preload.src = img.src;
+        };
+
+        container.appendChild(thumb);
+      });
+
+      if (filtered.length > 0) {
+        current = 0;
+        updateMainDisplay(filtered[0]);
+      }
+    }
+
+    function setImageFromFiltered(index, theme) {
+      const filtered = theme === "all"
+        ? Array.from(new Map(allImages.map(item => [item.src, item])).values())
+        : allImages.filter(img => img.themes.includes(theme));
+
+      current = index;
+      updateMainDisplay(filtered[index]);
+      highlightThumbnail(index);
+    }
+
+    function updateMainDisplay(img) {
+      document.getElementById("mainDisplay").src = img.src;
+      document.getElementById("imageDescription").innerHTML = `
+        <strong>${img.name}</strong> (${img.year})<br>${img.size} – ${img.medium}
+      `;
+    }
+
+    function highlightThumbnail(index) {
+      const thumbnails = document.getElementById("thumbnails").getElementsByTagName("img");
       for (let i = 0; i < thumbnails.length; i++) {
         thumbnails[i].classList.remove("active");
       }
-      thumbnails[current].classList.add("active");
-
-      const thumbnailWidth = thumbnails[0].offsetWidth + 16;
-      const containerCenter = thumbnailRow.parentElement.offsetWidth / 2;
-      const scrollTo = (thumbnailWidth * current + thumbnailWidth / 2) - containerCenter;
-      thumbnailRow.parentElement.scrollTo({ left: scrollTo, behavior: 'smooth' });
-
-      const desc = descriptions[current];
-      descriptionBox.innerHTML = `<strong>${desc.name}</strong> (${desc.year})<br>${desc.size} – ${desc.medium}`;
-    }
-
-    function setImage(index) {
-      current = index;
-      updateGallery();
-    }
-
-    function nextImage() {
-      current = (current + 1) % images.length;
-      updateGallery();
-    }
-
-    function prevImage() {
-      current = (current - 1 + images.length) % images.length;
-      updateGallery();
-    }
-
-    function openMessagePopup() {
-      document.getElementById("messagePopup").style.display = "block";
-    }
-
-    function closeMessagePopup() {
-      document.getElementById("messagePopup").style.display = "none";
+      if (thumbnails[index]) thumbnails[index].classList.add("active");
     }
 
     function filterByTheme() {
       const selectedTheme = document.getElementById("themeDropdown").value;
-      const thumbnailRow = document.getElementById("thumbnails");
-      
-      // Clear thumbnails
-      thumbnailRow.innerHTML = "";
-
-      // Re-add thumbnails that match the theme
-      descriptions.forEach((desc, index) => {
-        if (selectedTheme === "all" || desc.theme === selectedTheme) {
-          const img = document.createElement("img");
-          img.src = images[index];
-          img.alt = desc.name;
-          img.onclick = () => setImage(index);
-          thumbnailRow.appendChild(img);
-        }
-      });
-
-      // Reset main image to first visible item
-      const visibleIndexes = descriptions
-        .map((desc, i) => (selectedTheme === "all" || desc.theme === selectedTheme) ? i : null)
-        .filter(i => i !== null);
-
-      if (visibleIndexes.length > 0) {
-        setImage(visibleIndexes[0]);
-      } else {
-        document.getElementById("mainDisplay").src = "";
-        document.getElementById("imageDescription").innerHTML = "No images available.";
-      }
+      renderThumbnails(selectedTheme);
     }
 
-    let devKeyState = {
-      ctrl: false,
-      shiftRight: false,
-      backtick: false
-    };
-    
+    function filterByTheme() {
+      const selectedTheme = document.getElementById("themeDropdown").value;
+      localStorage.setItem("lastTheme", selectedTheme);
+      renderThumbnails(selectedTheme);
+    }
+
+    window.addEventListener("load", () => {
+      loadGalleryData().then(() => {
+        const lastTheme = localStorage.getItem("lastTheme") || "all";
+        document.getElementById("themeDropdown").value = lastTheme;
+        renderThumbnails(lastTheme);
+      });
+    });
+
     document.addEventListener("keydown", (e) => {
-      if (e.code === "ControlLeft" || e.code === "ControlRight") devKeyState.ctrl = true;
-      if (e.code === "ShiftRight") devKeyState.shiftRight = true;
-      if (e.code === "Backquote") devKeyState.backtick = true;
-    
-      if (devKeyState.ctrl && devKeyState.shiftRight && devKeyState.backtick) {
-        toggleDeveloperMode();
+      const thumbnails = document.getElementById("thumbnails").getElementsByTagName("img");
+      const selectedTheme = document.getElementById("themeDropdown").value;
+      const filtered = selectedTheme === "all"
+        ? Array.from(new Map(allImages.map(item => [item.src, item])).values())
+        : allImages.filter(img => img.themes.includes(selectedTheme));
+
+      if (e.key === "ArrowRight") {
+        current = (current + 1) % filtered.length;
+        updateMainDisplay(filtered[current]);
+        highlightThumbnail(current);
+      } else if (e.key === "ArrowLeft") {
+        current = (current - 1 + filtered.length) % filtered.length;
+        updateMainDisplay(filtered[current]);
+        highlightThumbnail(current);
       }
     });
-
-    document.addEventListener("keyup", (e) => {
-      if (e.code === "ControlLeft" || e.code === "ControlRight") devKeyState.ctrl = false;
-      if (e.code === "ShiftRight") devKeyState.shiftRight = false;
-      if (e.code === "Backquote") devKeyState.backtick = false;
-    });
     
-    function toggleDeveloperMode() {
-      const panel = document.getElementById("developerPanel");
-      panel.style.display = panel.style.display === "none" ? "block" : "none";
-    }
-    
-    function handleUploads() {
-      const input = document.getElementById("fileInput");
-      const preview = document.getElementById("uploadPreview");
-      const selectedTheme = document.getElementById("themeSelect").value;
-
-      preview.innerHTML = "";
-
-      [...input.files].forEach(file => {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          let mediaElement;
-          if (file.type.startsWith("image/")) {
-            mediaElement = document.createElement("img");
-          } else if (file.type.startsWith("video/")) {
-            mediaElement = document.createElement("video");
-            mediaElement.controls = true;
-          }
-
-          if (mediaElement) {
-            mediaElement.src = e.target.result;
-            mediaElement.style.maxWidth = "150px";
-            mediaElement.style.margin = "10px";
-            mediaElement.style.borderRadius = "10px";
-
-            // Wrap in a container with theme label
-            const wrapper = document.createElement("div");
-            wrapper.style.textAlign = "center";
-            wrapper.style.margin = "10px";
-            wrapper.innerHTML = `<small style="display:block;margin-bottom:6px;color:#555;"><em>${selectedTheme}</em></small>`;
-            wrapper.appendChild(mediaElement);
-    
-            preview.appendChild(wrapper);
-          }
-        };
-        reader.readAsDataURL(file);
-      });
-    }
-
-    window.addEventListener('load', updateGallery);
+    window.addEventListener("load", loadGalleryData);
   </script>
 </body></html>
