@@ -216,13 +216,7 @@
       renderThumbnails(selectedTheme);
     }
 
-    window.addEventListener("load", () => {
-      loadGalleryData().then(() => {
-        const lastTheme = localStorage.getItem("lastTheme") || "all";
-        document.getElementById("themeDropdown").value = lastTheme;
-        renderThumbnails(lastTheme);
-      });
-    });
+    
 
     document.addEventListener("keydown", (e) => {
       const thumbnails = document.getElementById("thumbnails").getElementsByTagName("img");
@@ -241,7 +235,36 @@
         highlightThumbnail(current);
       }
     });
+
+    function prevImage() {
+      const selectedTheme = document.getElementById("themeDropdown").value;
+      const filtered = selectedTheme === "all"
+        ? Array.from(new Map(allImages.map(item => [item.src, item])).values())
+        : allImages.filter(img => img.themes.includes(selectedTheme));
+
+      current = (current - 1 + filtered.length) % filtered.length;
+      updateMainDisplay(filtered[current]);
+      highlightThumbnail(current);
+    }
+
+    function nextImage() {
+      const selectedTheme = document.getElementById("themeDropdown").value;
+      const filtered = selectedTheme === "all"
+        ? Array.from(new Map(allImages.map(item => [item.src, item])).values())
+        : allImages.filter(img => img.themes.includes(selectedTheme));
+
+      current = (current + 1) % filtered.length;
+      updateMainDisplay(filtered[current]);
+      highlightThumbnail(current);
+    }
     
-    window.addEventListener("load", loadGalleryData);
+    window.addEventListener("load", () => {
+      loadGalleryData().then(() => {
+        const lastTheme = localStorage.getItem("lastTheme") || "all";
+        document.getElementById("themeDropdown").value = lastTheme;
+        renderThumbnails(lastTheme);
+      });
+    });
+    
   </script>
 </body></html>
