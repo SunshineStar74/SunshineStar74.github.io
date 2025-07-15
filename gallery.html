@@ -61,16 +61,17 @@
     </div>
   </div>
     
-  <div class="footer">
+  <!-- Footer -->
+  <footer class="footer">
     <div class="footer-content">
-      <div>&copy; 2025 La Casa de Cartón</div>
+      <div class="copyright">&copy; 2025 La Casa de Cartón</div>
       <div class="social-icons">
-        <a href="mailto:lacasadecarton23@gmail.com" target="_blank"><i class="fas fa-envelope fa-lg"></i></a>
-        <a href="https://www.instagram.com/lacasadecarton23/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
-        <button onclick="openMessagePopup()"><i class="fas fa-comment-dots fa-lg"></i></button>
+        <a href="mailto:lacasadecarton23@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/lacasadecarton23/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <button onclick="openMessagePopup()" aria-label="Message Options"><i class="fas fa-comment-dots"></i></button>
       </div>
     </div>
-  </div>
+  </footer>
 
   <!-- Message popup -->
   <div id="messagePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.6); z-index:999;">
