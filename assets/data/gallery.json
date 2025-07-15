@@ -1,0 +1,178 @@
+[
+  {
+    "src": "assets/images/valentines/big-love.jpg",
+    "name": "Big LOVE Letters",
+    "year": 2024,
+    "size": "Large",
+    "medium": "Brown Cardboard",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/box-of-chocolates.jpg",
+    "name": "Box of Chocolates",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "Decorative Display",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/boy-or-girl-heart.jpg",
+    "name": "Boy or Girl Heart",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "Gender Reveal Theme",
+    "themes": ["valentines", "misc"]
+  },
+  {
+    "src": "assets/images/valentines/combi.jpg",
+    "name": "Combi Balloon Mosaic",
+    "year": 2024,
+    "size": "5ft",
+    "medium": "Mosaic Frame",
+    "themes": ["valentines", "mosaic"]
+  },
+  {
+    "src": "assets/images/valentines/heart-arch.jpg",
+    "name": "Heart Arch",
+    "year": 2024,
+    "size": "Large",
+    "medium": "Valentine Photo Arch",
+    "themes": ["valentines", "backdrops"]
+  },
+  {
+    "src": "assets/images/valentines/hollow-heart.jpg",
+    "name": "Hollow Heart",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "Open Heart Frame",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/huge-box-of-chocolates.jpg",
+    "name": "Huge Box of Chocolates",
+    "year": 2024,
+    "size": "Large",
+    "medium": "Giant Display",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/i-love-you-brown.jpg",
+    "name": "I Love You (Brown)",
+    "year": 2024,
+    "size": "Large",
+    "medium": "Brown Lettering",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/i-love-you-white.jpg",
+    "name": "I Love You (White)",
+    "year": 2024,
+    "size": "Large",
+    "medium": "White Lettering",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/kisses-booth.jpg",
+    "name": "Kisses Booth",
+    "year": 2024,
+    "size": "Small",
+    "medium": "Cardboard Stand",
+    "themes": ["valentines", "signs"]
+  },
+  {
+    "src": "assets/images/valentines/love.jpg",
+    "name": "LOVE Sign",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "Freestanding Letters",
+    "themes": ["valentines", "signs"]
+  },
+  {
+    "src": "assets/images/valentines/love-big-heart.jpg",
+    "name": "LOVE with Big Heart",
+    "year": 2024,
+    "size": "Large",
+    "medium": "Heart & Letter Combo",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/love-brown.jpg",
+    "name": "LOVE in Brown",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "Natural Cardboard",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/love-small-hearts.jpg",
+    "name": "LOVE with Small Hearts",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "Heart-Pattern Design",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/napkin heart.jpg",
+    "name": "Napkin Heart",
+    "year": 2024,
+    "size": "Small",
+    "medium": "Folded Cardboard Napkin Holder",
+    "themes": ["valentines", "tablebases"]
+  },
+  {
+    "src": "assets/images/valentines/red-truck.jpg",
+    "name": "Red Truck Display",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "3D Cardboard Car",
+    "themes": ["valentines", "misc"]
+  },
+  {
+    "src": "assets/images/valentines/small-love-box.jpg",
+    "name": "Small LOVE Box",
+    "year": 2024,
+    "size": "Small",
+    "medium": "Gift-Size Decor",
+    "themes": ["valentines", "minis"]
+  },
+  {
+    "src": "assets/images/valentines/teddy-bears.jpg",
+    "name": "Teddy Bears",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "Cute Animal Pair",
+    "themes": ["valentines", "minis"]
+  },
+  {
+    "src": "assets/images/valentines/tiny-love-box.jpg",
+    "name": "Tiny LOVE Box",
+    "year": 2024,
+    "size": "Mini",
+    "medium": "Small Box Gift",
+    "themes": ["valentines", "minis"]
+  },
+  {
+    "src": "assets/images/valentines/white-love.jpg",
+    "name": "LOVE in White",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "White Letter Display",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/wonky-love.jpg",
+    "name": "Wonky LOVE",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "Whimsical Tilted Letters",
+    "themes": ["valentines"]
+  },
+  {
+    "src": "assets/images/valentines/xoxo.jpg",
+    "name": "XOXO Sign",
+    "year": 2024,
+    "size": "Medium",
+    "medium": "Hugs & Kisses Letters",
+    "themes": ["valentines", "signs"]
+  }
+]
