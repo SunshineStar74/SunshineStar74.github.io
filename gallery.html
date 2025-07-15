@@ -219,6 +219,11 @@
     
 
     document.addEventListener("keydown", (e) => {
+      const activeElement = document.activeElement;
+      if (activeElement.tagName === "INPUT" || activeElement.tagName === "SELECT" || activeElement.tagName === "TEXTAREA") {
+        return; // Don't interfere with form controls
+      }
+      
       const thumbnails = document.getElementById("thumbnails").getElementsByTagName("img");
       const selectedTheme = document.getElementById("themeDropdown").value;
       const filtered = selectedTheme === "all"
