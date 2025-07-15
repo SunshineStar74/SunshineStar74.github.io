@@ -206,21 +206,16 @@
     }
 
     function filterByTheme() {
-      const selectedTheme = document.getElementById("themeDropdown").value;
-      renderThumbnails(selectedTheme);
-    }
+      const dropdown = document.getElementById("themeDropdown");
+      const selectedTheme = dropdown.value;
 
-    function filterByTheme() {
-      const selectedTheme = document.getElementById("themeDropdown").value;
       localStorage.setItem("lastTheme", selectedTheme);
       renderThumbnails(selectedTheme);
 
       // Remove focus from the dropdown to prevent arrow key hijacking
       dropdown.blur();
     }
-
     
-
     document.addEventListener("keydown", (e) => {
       const activeElement = document.activeElement;
       if (activeElement.tagName === "INPUT" || activeElement.tagName === "SELECT" || activeElement.tagName === "TEXTAREA") {
