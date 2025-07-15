@@ -214,6 +214,9 @@
       const selectedTheme = document.getElementById("themeDropdown").value;
       localStorage.setItem("lastTheme", selectedTheme);
       renderThumbnails(selectedTheme);
+
+      // Remove focus from the dropdown to prevent arrow key hijacking
+      dropdown.blur();
     }
 
     
