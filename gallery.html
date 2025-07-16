@@ -111,6 +111,7 @@
 
     <p style="font-size: 14px; color: #888;">Preview only – not saved permanently.</p>
     <div id="uploadPreview"></div>
+    <button onclick="closeDevPanel()" style="margin-top: 10px;">Close Developer Panel</button>
     </div>
   </main>
 </section>
@@ -260,6 +261,38 @@
       updateMainDisplay(filtered[current]);
       highlightThumbnail(current);
     }
+
+    let devSequence = "";
+    const devCode = "dev";
+
+    document.addEventListener("keydown", (e) => {
+      // Track recent keystrokes
+      devSequence += e.key.toLowerCase();
+
+      // Keep only the last N characters
+      if (devSequence.length > devCode.length) {
+        devSequence = devSequence.slice(-devCode.length);
+      }
+
+      // If user types "dev"
+      if (devSequence === devCode) {
+        document.getElementById("developerPanel").style.display = "block";
+        localStorage.setItem("devMode", "true");
+        console.log("Developer Mode Activated");
+      }
+    });
+
+    function closeDevPanel() {
+      document.getElementById("developerPanel").style.display = "none";
+      localStorage.removeItem("devMode");
+    }
+
+    // Auto-show if previously activated
+    window.addEventListener("load", () => {
+      if (localStorage.getItem("devMode") === "true") {
+        document.getElementById("developerPanel").style.display = "block";
+      }
+    });
     
     window.addEventListener("load", () => {
       loadGalleryData().then(() => {
